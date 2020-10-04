@@ -40,63 +40,71 @@
         <table class="table table-sm table-bordered " style="font-size: small;">
             <thead>
                 <tr class="bg-primary text-white">
-                    <th>No</th>
-                    <th>Kode Unit Kerja</th>
-                    <th>Nama Unit Kerja</th>
-                    <th>Alamat</th>
-                    <th>Kelurahan</th>
-                    <th>Kecamatan</th>
-                    <th>Kabupaten/Kota</th>
-                    <th>Propinsi</th>
-                    <th>Negara</th>
-                    <th>Kode Pos</th>
+                    <th>No Order</th>
+                    <th>Tanggal Order</th>
+                    <th>Tanggal dan Jam Diterima Ekspedisi</th>
+                    <th>Nama Pengirim</th>
+                    <th>Nama Penerima/th>
+                    <th>Up</th>
                     <th>Kode BC</th>
-                    <th>Action</th>
+                    <th>Anggaran Tersedia</th>
+                    <th>Biaya</th>
+                    <th>Kurir</th>
+                    <th>No Resi</th>
+                    <th>Diterima Tanggal</th>
+                    <th>Telah Diterima Oleh</th>
+                    <th>Status</th>
+                    <th>Lacak</th>
                 </tr>
             </thead>
             <tbody>
-                <?php $no = 1 ?>
-                <?php foreach ($unitkerja as $unitk) : ?>
                     <tr>
                         <td>
-                            <?= $no++ ?>
+                            CLC20/00001
                         </td>
                         <td>
-                            <?= $unitk->kodeUK ?>
+                            20-Aug2020 ; 10:20:20
                         </td>
                         <td>
-                            <?= $unitk->namaUK ?>
+                            20-Aug2020 ; 11:00:20
                         </td>
                         <td>
-                            <?= $unitk->alamatUK ?>
+                           Agus Hendriawan
                         </td>
                         <td>
-                            <?= $unitk->kelurahan ?>
+                            PT Cilacap Bercahaya
                         </td>
                         <td>
-                            <?= $unitk->kecamatan ?>
+                            Bapak Hendriawan
                         </td>
                         <td>
-                            <?= $unitk->kota ?>
+                            10-43-01-06- 4722-00-14- 042-0-0000- 000000
                         </td>
                         <td>
-                            <?= $unitk->provinsi ?>
+                            3,000,000
                         </td>
                         <td>
-                            <?= $unitk->negara ?>
+                            5,000
                         </td>
                         <td>
-                            <?= $unitk->kodePos ?>
+                            Pos Indonesia
                         </td>
                         <td>
-                            ###
+                            12345678
+                        </td>
+                         <td>
+                        
+                        </td>
+                         <td>
+                            
+                        </td>
+                         <td>
+                            Proses kirim
                         </td>
                         <td>
-                            <a href="#" data-toggle="modal" data-target="#modaleditdata<?= $unitk->kodeUK; ?>"><span style="color: blue;"><i class="fas fa-edit fa-sm"></i></span></a>
-                            <a onclick="deleteConfirm('<?php echo site_url('administrator/unitkerja/delete/' . $unitk->kodeUK) ?>')" href="#!"><span style="color: red;"><i class="fas fa-trash fa-sm"></i></span></a>
+                            <a href="#!"><span style="color: green;"><i class="fas fa-search fa-sm"></i></span></a>
                         </td>
                     </tr>
-                <?php endforeach ?>
             </tbody>
         </table>
     </div>
