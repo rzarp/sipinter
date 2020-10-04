@@ -7,74 +7,46 @@
     <h1 class="h3 mb-2 text-gray-800">DATA USER UNIT KERJA</h1>
 
     <!-- DataTales Example -->
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">
-            <a href="#" data-toggle="modal" data-target="#modaltambahdata" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-print fa-sm text-white-50"></i> Print</a>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-file fa-sm text-white-50"></i> Export Excel</a>
-        </h6>
-    </div>
     <div class="table-responsive-sm">
         <table class="table table-sm table-bordered " style="font-size: small;">
             <thead>
                 <tr class="bg-primary text-white">
                     <th>No</th>
-                    <th>Kode Unit Kerja</th>
-                    <th>Nama Unit Kerja</th>
-                    <th>Alamat</th>
-                    <th>Kelurahan</th>
-                    <th>Kecamatan</th>
-                    <th>Kabupaten/Kota</th>
-                    <th>Propinsi</th>
-                    <th>Negara</th>
-                    <th>Kode Pos</th>
+                    <th>Nama</th>
+                    <th>NPP</th>
+                    <th>Posisi Jabatan</th>
+                    <th>Unit Kerja</th>
                     <th>Kode BC</th>
-                    <th>Action</th>
+                    <th>Alamat Pengiriman</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1 ?>
-                <?php foreach ($unitkerja as $unitk) : ?>
+                
                     <tr>
                         <td>
                             <?= $no++ ?>
                         </td>
                         <td>
-                            <?= $unitk->kodeUK ?>
+                            Agus Hendriawan
                         </td>
                         <td>
-                            <?= $unitk->namaUK ?>
+                           16747
                         </td>
                         <td>
-                            <?= $unitk->alamatUK ?>
+                            HR dan GA officer 2
                         </td>
                         <td>
-                            <?= $unitk->kelurahan ?>
+                            Cilacap
                         </td>
                         <td>
-                            <?= $unitk->kecamatan ?>
+                            10-47-xxxxx
                         </td>
                         <td>
-                            <?= $unitk->kota ?>
-                        </td>
-                        <td>
-                            <?= $unitk->provinsi ?>
-                        </td>
-                        <td>
-                            <?= $unitk->negara ?>
-                        </td>
-                        <td>
-                            <?= $unitk->kodePos ?>
-                        </td>
-                        <td>
-                            ###
-                        </td>
-                        <td>
-                            <a href="#" data-toggle="modal" data-target="#modaleditdata<?= $unitk->kodeUK; ?>"><span style="color: blue;"><i class="fas fa-edit fa-sm"></i></span></a>
-                            <a onclick="deleteConfirm('<?php echo site_url('administrator/unitkerja/delete/' . $unitk->kodeUK) ?>')" href="#!"><span style="color: red;"><i class="fas fa-trash fa-sm"></i></span></a>
+                            PT.sucofindo
                         </td>
                     </tr>
-                <?php endforeach ?>
+                
             </tbody>
         </table>
     </div>

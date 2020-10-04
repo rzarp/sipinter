@@ -7,11 +7,15 @@
     <h1 class="h3 mb-2 text-gray-800">DATA PENERIMA</h1>
 
     <!-- DataTales Example -->
-    <div class="card-header py-3">
+    <div class="card-header ml-auto p-1 mb-3">
         <h6 class="m-0 font-weight-bold text-primary">
             <a href="#" data-toggle="modal" data-target="#modaltambahdata" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Tambah Data</a>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-print fa-sm text-white-50"></i> Print</a>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm"><i class="fas fa-file fa-sm text-white-50"></i> Export Excel</a>
+            <form class="form-inline d-none d-sm-inline-block mr-2">
+                <input class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="search"></input>
+                <button class="btn btn-outline-primary mr-sm-2" type="search"><i class="fas fa fa-search"></i></button>
+            </form>
         </h6>
     </div>
     <div class="table-responsive-sm">
@@ -19,8 +23,7 @@
             <thead>
                 <tr class="bg-primary text-white">
                     <th>No</th>
-                    <th>Kode Unit Kerja</th>
-                    <th>Nama Unit Kerja</th>
+                    <th>Nama Penerima</th>
                     <th>Alamat</th>
                     <th>Kelurahan</th>
                     <th>Kecamatan</th>
@@ -28,53 +31,46 @@
                     <th>Propinsi</th>
                     <th>Negara</th>
                     <th>Kode Pos</th>
-                    <th>Kode BC</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1 ?>
-                <?php foreach ($unitkerja as $unitk) : ?>
                     <tr>
                         <td>
                             <?= $no++ ?>
                         </td>
                         <td>
-                            <?= $unitk->kodeUK ?>
+                           PT.Jaya Bersama 
                         </td>
                         <td>
-                            <?= $unitk->namaUK ?>
+                            Jl.S Parman No 15 rt 009 rw 13
                         </td>
                         <td>
-                            <?= $unitk->alamatUK ?>
+                           Tegal rejo 
                         </td>
                         <td>
-                            <?= $unitk->kelurahan ?>
+                            Cilacap Utara
                         </td>
                         <td>
-                            <?= $unitk->kecamatan ?>
+                            Cilacap
                         </td>
                         <td>
-                            <?= $unitk->kota ?>
+                            Jawa Tengah
                         </td>
                         <td>
-                            <?= $unitk->provinsi ?>
+                            Indonesia
                         </td>
                         <td>
-                            <?= $unitk->negara ?>
+                            53211
                         </td>
+                        
                         <td>
-                            <?= $unitk->kodePos ?>
-                        </td>
-                        <td>
-                            ###
-                        </td>
-                        <td>
-                            <a href="#" data-toggle="modal" data-target="#modaleditdata<?= $unitk->kodeUK; ?>"><span style="color: blue;"><i class="fas fa-edit fa-sm"></i></span></a>
-                            <a onclick="deleteConfirm('<?php echo site_url('administrator/unitkerja/delete/' . $unitk->kodeUK) ?>')" href="#!"><span style="color: red;"><i class="fas fa-trash fa-sm"></i></span></a>
+                            <a href="#" data-toggle="modal" data-target="#modaleditdata"><span style="color: blue;"><i class="fas fa-edit fa-sm"></i></span></a>
+                            <a onclick="" href="#!"><span style="color: red;"><i class="fas fa-trash fa-sm"></i></span></a>
                         </td>
                     </tr>
-                <?php endforeach ?>
+                
             </tbody>
         </table>
     </div>

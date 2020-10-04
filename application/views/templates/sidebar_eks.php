@@ -43,7 +43,7 @@
            </li>
            <li class="nav-item active">
                <a class="nav-link" href="input_resi">
-                   <i class="fas fa-fw fa fa-pencil-square"></i>
+                   <i class="fas fa-fw fas fa-pencil-alt"></i>
                    <span>Input no resi & biaya</span>
                </a>
            </li>
@@ -65,7 +65,7 @@
            </div>
 
            <li class="nav-item active">
-               <a class="nav-link" href="<?php echo base_url('login/logout'); ?>">
+               <a class="nav-link" href="<?php echo base_url('login/logout'); ?>" data-toggle="modal" data-target="#logoutModal">
                    <i class="fas fa-fw fa fa-key"></i>
                    <span>Logout</span>
                </a>
@@ -78,3 +78,23 @@
 
        </ul>
        <!-- End of Sidebar -->
+
+
+       <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Anda Yakin Untuk Logout?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Pilih "Logout" Untuk Keluar</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                        <a class="btn btn-danger" href="<?php echo base_url('login/logout'); ?>">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
