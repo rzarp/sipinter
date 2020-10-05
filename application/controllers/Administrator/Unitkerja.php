@@ -16,6 +16,7 @@ class Unitkerja extends CI_Controller
     public function index()
     {
         $data["unitKerja"] = $this->m_unitkerja->getAll();
+        $data["kode"] = $this->m_unitkerja->getBC();
         $this->load->view("templates/unitkerja_header");
         $this->load->view("administrator/v_unitkerja", $data);
         $this->load->view("templates/unitkerja_footer");

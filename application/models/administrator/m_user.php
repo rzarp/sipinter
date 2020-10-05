@@ -3,18 +3,16 @@
 class M_user extends CI_Model
 {
     private $_table = "datauser";
-    private $_uk = "unitKerja";
-    private $_bc = "kodebc";
 
 
-    public $asal;
-    public $nama;
+    public $asalUK;
     public $role;
+    public $username;
     public $npp;
     public $posisi;
-    public $kode;
+    public $kodeBC;
     public $email;
-    public $pass;
+    public $password;
     public $alamat;
 
     public function rules()
@@ -27,21 +25,21 @@ class M_user extends CI_Model
             ],
 
             [
+                'field' => 'role',
+                'label' => 'Role',
+                'rules' => 'numeric'
+            ],
+
+            [
                 'field' => 'nama',
                 'label' => 'Nama',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'role',
-                'label' => 'Role',
-                'rules' => 'required'
-            ],
-
-            [
                 'field' => 'npp',
                 'label' => 'Npp',
-                'rules' => 'required'
+                'rules' => 'numeric'
             ],
 
             [
@@ -51,8 +49,8 @@ class M_user extends CI_Model
             ],
 
             [
-                'field' => 'kode',
-                'label' => 'Kode',
+                'field' => 'kodebc',
+                'label' => 'Kodebc',
                 'rules' => 'required'
             ],
 
@@ -89,14 +87,14 @@ class M_user extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->asal = $post["asal"];
-        $this->role = $post["role"];
-        $this->nama = $post["nama"];
+        $this->asalUK = $_POST['asal'];
+        $this->role = $_POST['role'];
+        $this->username = $post["nama"];
         $this->npp = $post["npp"];
         $this->posisi = $post["posisi"];
-        $this->kode = $post["kode"];
+        $this->kodeBC = $_POST['kodebc'];
         $this->email = $post["email"];
-        $this->pass = $post["pass"];
+        $this->password = $post["pass"];
         $this->alamat = $post["alamat"];
         return $this->db->insert($this->_table, $this);
     }
@@ -117,11 +115,17 @@ class M_user extends CI_Model
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array("npp" => $id));
+        return $this->db->delete($this->_table, array("idUser" => $id));
     }
 
     public function getKode($kode)
     {
-        return $this->db->get_where($this->_bc, ["kodeUK" => $kode])->result();
+        $this->db->where('kodeUK', $kode);
+        $query = $this->db->get('kodebc');
+        $output = '<option value="">Pilih Kode BC</option>';
+        foreach ($query->result() as $row) {
+            $output .= '<option value="' . $row->kodeBc . '">' . $row->kodeBc . '</option>';
+        }
+        return $output;
     }
 }

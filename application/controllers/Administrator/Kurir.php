@@ -31,13 +31,13 @@ class Kurir extends CI_Controller
             $kurir->save();
         }
 
-        redirect("kurir");
+        redirect("administrator/kurir");
         $this->session->set_flashdata('success', 'Berhasil');
     }
 
-    public function edit($nama = null)
+    public function edit($id = null)
     {
-        if (!isset($nama)) redirect('user');
+        if (!isset($id)) redirect('administrator/kurir');
 
         $kurir = $this->m_kurir;
         $validation = $this->form_validation;
@@ -48,18 +48,18 @@ class Kurir extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil');
         }
 
-        $data["kurir"] = $kurir->getById($nama);
+        $data["kurir"] = $kurir->getById($id);
         if (!$data["kurir"]) show_404();
 
-        $this->load->view("kurir", $data);
+        redirect("administrator/kurir");
     }
 
-    public function delete($nama = null)
+    public function delete($id = null)
     {
-        if (!isset($nama)) show_404();
+        if (!isset($id)) show_404();
 
-        if ($this->m_kurir->delete($nama)) {
-            redirect(site_url('kurir'));
+        if ($this->m_kurir->delete($id)) {
+            redirect(site_url('administrator/kurir'));
         }
     }
 }

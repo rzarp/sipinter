@@ -18,7 +18,6 @@ class User extends CI_Controller
     {
         $data["unitKerja"] = $this->m_unitkerja->getAll();
         $data["user"] = $this->m_user->getAll();
-        //$data["kode"] = $this->m_user->getKode();
         $this->load->view("templates/unitkerja_header");
         $this->load->view("administrator/v_user", $data);
         $this->load->view("templates/unitkerja_footer");
@@ -66,17 +65,10 @@ class User extends CI_Controller
         }
     }
 
-    //    public function getkode()
-    //  {
-    //    function processDrpdown($selectedVal) {
-    //      $user = $this->m_user;
-    //    $data["kode"] = $user->getKode($kode);
-    //  $this->load->view("administrator/user", $data);
-    //}        
-
-    // if ($_POST['dropdownValue']){
-    //   //call the function or execute the code
-    //   processDrpdown($_POST['dropdownValue']);
-    // }
-    //}
+    public function kode()
+    {
+        if ($this->input->post('kode')) {
+            echo $this->m_user->getKode($this->input->post('kode'));
+        }
+    }
 }
